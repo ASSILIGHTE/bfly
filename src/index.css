@@ -233,17 +233,23 @@ body.warm-bg, #root.warm-bg {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
   transform: translate3d(0, 15px, 0) scale(0.96);
   transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0.45s;
-  pointer-events: none;
   will-change: opacity, transform;
 }
 
 .page.active {
   opacity: 1;
   visibility: visible;
-  transform: translate3d(0, 0, 0) scale(1);
   pointer-events: auto;
+  z-index: 20;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.page:not(.active) * {
+  pointer-events: none !important;
 }
 
 .page-content {
