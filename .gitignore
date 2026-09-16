@@ -1,39 +1,5 @@
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
-
-# Node / Caches / Dependencies (for future builds or tools)
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-.cache/
+.vite/
 dist/
-build/
-.tmp/
-temp/
-
-# IDEs & Code Editors
-.idea/
-.vscode/
-*.suo
-*.user
-*.userosmat
-*.sln
-*.swp
-*.swo
-
-# Environment & Local Server Logs
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 *.log
+.DS_Store
