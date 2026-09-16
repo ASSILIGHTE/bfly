@@ -192,7 +192,7 @@ export default function App() {
           <span className="vinyl-artist">The 1975 🎵</span>
         </div>
       </div>
-      <audio ref={audioRef} loop src="/public/The 1975 - About You Official.mp3" preload="auto" />
+      <audio ref={audioRef} loop src="/The 1975 - About You Official.mp3" preload="auto" />
 
       {/* Fullscreen Photo Lightbox Modal */}
       {modalState.isOpen && (
@@ -220,17 +220,17 @@ export default function App() {
 
           <div className="page-content">
             <div className="polaroid-stack">
-              <div className="polaroid-card stack-back" onClick={() => openModal('/public/photos/photo2.jpeg', 'Moments with You 💕')}>
+              <div className="polaroid-card stack-back" onClick={() => openModal('/photos/photo2.jpeg', 'Moments with You 💕')}>
                 <div className="tape-sticker top-right-tape"></div>
                 <div className="photo-box">
-                  <img src="/public/photos/photo2.jpeg" alt="Photo Memory" />
+                  <img src="/photos/photo2.jpeg" alt="Photo Memory" />
                 </div>
               </div>
 
-              <div className="polaroid-card stack-front" onClick={() => openModal('/public/photos/photo1.jpeg', 'Hey, You... ❤️')}>
+              <div className="polaroid-card stack-front" onClick={() => openModal('/photos/photo1.jpeg', 'Hey, You... ❤️')}>
                 <div className="heart-clip">📎</div>
                 <div className="photo-box">
-                  <img src="/public/photos/photo1.jpeg" alt="Hero Photo" />
+                  <img src="/photos/photo1.jpeg" alt="Hero Photo" />
                 </div>
                 <span className="polaroid-handwriting">You & Me ❤️</span>
               </div>
@@ -279,11 +279,11 @@ export default function App() {
 
                   <div className="letter-polaroid" onClick={(e) => {
                     e.stopPropagation();
-                    openModal('/public/photos/photo2.jpeg', 'Favorite Person 💕');
+                    openModal('/photos/photo2.jpeg', 'Favorite Person 💕');
                   }}>
                     <div className="tape-sticker mini-tape"></div>
                     <div className="polaroid-photo-box">
-                      <img src="/public/photos/photo2.jpeg" alt="Favorite Person" />
+                      <img src="/photos/photo2.jpeg" alt="Favorite Person" />
                     </div>
                     <span className="polaroid-handwriting">Favorite Person 💕</span>
                   </div>
@@ -388,8 +388,8 @@ export default function App() {
                     <h3>Your Smile</h3>
                     <span className="flip-hint">Hover / Touch untuk buka ↻</span>
                   </div>
-                  <div className="flip-card-back" onClick={(e) => { e.stopPropagation(); openModal('/public/photos/photo4.jpeg', 'Your Smile 😊'); }}>
-                    <img src="/public/photos/photo4.jpeg" alt="Your Smile" className="flip-bg-img" />
+                  <div className="flip-card-back" onClick={(e) => { e.stopPropagation(); openModal('/photos/photo4.jpeg', 'Your Smile 😊'); }}>
+                    <img src="/photos/photo4.jpeg" alt="Your Smile" className="flip-bg-img" />
                     <div className="flip-overlay">
                       <h4>❤️ Your Smile</h4>
                       <p>“Entah kenapa senyum kamu selalu punya efek aneh.”</p>
@@ -406,8 +406,8 @@ export default function App() {
                     <h3>Your Presence</h3>
                     <span className="flip-hint">Hover / Touch untuk buka ↻</span>
                   </div>
-                  <div className="flip-card-back" onClick={(e) => { e.stopPropagation(); openModal('/public/photos/photo5.jpeg', 'Your Presence ✨'); }}>
-                    <img src="/public/photos/photo5.jpeg" alt="Your Presence" className="flip-bg-img" />
+                  <div className="flip-card-back" onClick={(e) => { e.stopPropagation(); openModal('/photos/photo5.jpeg', 'Your Presence ✨'); }}>
+                    <img src="/photos/photo5.jpeg" alt="Your Presence" className="flip-bg-img" />
                     <div className="flip-overlay">
                       <h4>✨ Your Presence</h4>
                       <p>“Bahkan cuma ngobrol sebentar sudah cukup bikin hari lebih baik.”</p>
@@ -424,8 +424,8 @@ export default function App() {
                     <h3>Just You</h3>
                     <span className="flip-hint">Hover / Touch untuk buka ↻</span>
                   </div>
-                  <div className="flip-card-back" onClick={(e) => { e.stopPropagation(); openModal('/public/photos/photo6.jpeg', 'Just You 🌷'); }}>
-                    <img src="/public/photos/photo6.jpeg" alt="Just You" className="flip-bg-img" />
+                  <div className="flip-card-back" onClick={(e) => { e.stopPropagation(); openModal('/photos/photo6.jpeg', 'Just You 🌷'); }}>
+                    <img src="/photos/photo6.jpeg" alt="Just You" className="flip-bg-img" />
                     <div className="flip-overlay">
                       <h4>🌷 Just You</h4>
                       <p>“Nggak perlu alasan khusus. Kamu ya kamu.”</p>
@@ -516,15 +516,15 @@ export default function App() {
                 <p className="final-subtext">Sesederhana itu.</p>
 
                 <div className="finale-collage">
-                  <div className="collage-item c1" onClick={() => openModal('/public/photos/photo7.jpeg', 'Sweet Moments 💕')}>
-                    <img src="/public/photos/photo7.jpeg" alt="Memory" />
+                  <div className="collage-item c1" onClick={() => openModal('/photos/photo7.jpeg', 'Sweet Moments 💕')}>
+                    <img src="/photos/photo7.jpeg" alt="Memory" />
                   </div>
-                  <div className="collage-item c2 main-hero-photo" onClick={() => openModal('/public/photos/hbd.jpeg', 'Happy Birthday / Special Day ❤️')}>
-                    <img src="/public/photos/hbd.jpeg" alt="Special Day" />
+                  <div className="collage-item c2 main-hero-photo" onClick={() => openModal('/photos/hbd.jpeg', 'Happy Birthday / Special Day ❤️')}>
+                    <img src="/photos/hbd.jpeg" alt="Special Day" />
                     <span className="collage-label">Forever ❤️</span>
                   </div>
-                  <div className="collage-item c3" onClick={() => openModal('/public/photos/photo8.jpeg', 'Always Together ✨')}>
-                    <img src="/public/photos/photo8.jpeg" alt="Memory" />
+                  <div className="collage-item c3" onClick={() => openModal('/photos/photo8.jpeg', 'Always Together ✨')}>
+                    <img src="/photos/photo8.jpeg" alt="Memory" />
                   </div>
                 </div>
 
