@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>A Little Something For You ❤️</title>
+  <meta name="description" content="An extraordinary interactive romantic story dedicated to someone special.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Canvas Layer (Golden Stardust & 3D Flying Butterflies) -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Aesthetic Floating Fullscreen Button -->
+  <button id="fullscreen-toggle" class="fullscreen-btn" title="Layar Penuh (Fullscreen)">
+    <span class="fs-icon">⛶</span>
+    <span class="fs-text">Full Screen</span>
+  </button>
+
+  <!-- Aesthetic Floating Vinyl Music Player -->
+  <div class="vinyl-widget" id="music-toggle" title="Putar / Hentikan Musik">
+    <div class="vinyl-disc">
+      <div class="vinyl-center"></div>
+    </div>
+    <div class="vinyl-info">
+      <span class="vinyl-title">About You</span>
+      <span class="vinyl-artist">The 1975 🎵</span>
+    </div>
+  </div>
+  <audio id="bg-music" loop src="public/The 1975 - About You Official.mp3" preload="auto"></audio>
+
+  <!-- Confetti Layer -->
+  <div id="confetti-container" class="confetti-container"></div>
+
+  <!-- Fullscreen Photo Lightbox -->
+  <div id="photo-modal" class="photo-modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close" aria-label="Tutup Foto">&times;</button>
+      <div class="modal-polaroid">
+        <img id="modal-img" src="" alt="Memory Photo">
+        <p id="modal-caption" class="modal-caption">Our Special Memory ❤️</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="app-wrapper">
+
+    <!-- PAGE 1: Hey, You... 👋 -->
+    <section id="page-1" class="page active">
+      <!-- Cute Floating Sticker: Teddy Bear 🧸 -->
+      <div class="cute-sticker teddy-bear" title="Teddy Bear Cute 💕">
+        <span class="sticker-emoji">🧸</span>
+        <span class="sticker-tag">Hug Me!</span>
+      </div>
+
+      <div class="page-content">
+        
+        <!-- 3D Overlapping Scrapbook Photo Stack -->
+        <div class="polaroid-stack">
+          <!-- Back Photo -->
+          <div class="polaroid-card stack-back photo-trigger" data-img="public/photos/photo2.jpeg" data-caption="Moments with You 💕">
+            <div class="tape-sticker top-right-tape"></div>
+            <div class="photo-box">
+              <img src="public/photos/photo2.jpeg" alt="Photo Memory">
+            </div>
+          </div>
+
+          <!-- Front Main Photo -->
+          <div class="polaroid-card stack-front photo-trigger" data-img="public/photos/photo1.jpeg" data-caption="Hey, You... ❤️">
+            <div class="heart-clip">📎</div>
+            <div class="photo-box">
+              <img src="public/photos/photo1.jpeg" alt="Hero Photo">
+            </div>
+            <span class="polaroid-handwriting">You & Me ❤️</span>
+          </div>
+        </div>
+
+        <span class="sub-title-tag">A LITTLE SOMETHING FOR YOU</span>
+        <h1 class="main-heading">Hey, kamu... <span class="heart-inline">❤️</span></h1>
+        <p class="sub-heading">Aku punya sesuatu kecil buat kamu.</p>
+
+        <button id="btn-page1" class="btn-primary btn-glow">
+          <span>Buka Story</span> <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- PAGE 2: Realistic Cute Love Letter Envelope 💌 -->
+    <section id="page-2" class="page">
+      <!-- Cute Floating Sticker: Love Stamp 💌 -->
+      <div class="cute-sticker love-stamp" title="Love Stamp 💌">
+        <span class="sticker-emoji">💌</span>
+        <span class="sticker-tag">Special!</span>
+      </div>
+
+      <div class="page-content">
+        <span class="sub-title-tag" id="envelope-hint-tag">KLIK SEGEL DENGAN LOGO HATI UNTUK MEMBUKA</span>
+
+        <!-- Envelope Container -->
+        <div class="envelope-wrapper" id="envelope-wrapper">
+          <div class="envelope-box">
+            
+            <!-- Slide-up Letter Card inside -->
+            <div class="letter-card-slide" id="letter-paper">
+              <div class="letter-header">
+                <span class="badge-text">SPECIAL MESSAGE 💌</span>
+              </div>
+              <h2 class="card-title">Buat orang favoritku...</h2>
+              <div class="card-body">
+                <p>Aku cuma mau bilang sesuatu yang sederhana.</p>
+                <p>Terima kasih sudah hadir,</p>
+                <p>terima kasih sudah menjadi bagian dari cerita kecilku,</p>
+                <p>dan terima kasih sudah membuat banyak hari terasa lebih menyenangkan.</p>
+                <p class="highlight-quote">
+                  Kamu mungkin nggak sadar,<br>
+                  tapi kehadiranmu berarti banyak buat aku. <span class="heart-pulse-inline">❤️</span>
+                </p>
+              </div>
+
+              <!-- Cute Polaroid Frame inside Letter -->
+              <div class="letter-polaroid photo-trigger" data-img="public/photos/photo2.jpeg" data-caption="Favorite Person 💕">
+                <div class="tape-sticker mini-tape"></div>
+                <div class="polaroid-photo-box">
+                  <img src="public/photos/photo2.jpeg" alt="Favorite Person">
+                </div>
+                <span class="polaroid-handwriting">Favorite Person 💕</span>
+              </div>
+
+              <!-- Button inside letter flow -->
+              <div class="letter-btn-wrapper">
+                <button id="btn-page2" class="btn-primary">
+                  <span>Ada satu lagi</span> <span class="btn-arrow">→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Envelope Back Base -->
+            <div class="envelope-back-panel"></div>
+
+            <!-- Pocket Flaps -->
+            <svg class="envelope-flaps-svg" viewBox="0 0 360 220" preserveAspectRatio="none">
+              <polygon points="0,0 180,115 0,220" fill="#fce4ec" stroke="rgba(201, 122, 142, 0.35)" stroke-width="1.5" />
+              <polygon points="360,0 180,115 360,220" fill="#fce4ec" stroke="rgba(201, 122, 142, 0.35)" stroke-width="1.5" />
+              <polygon points="0,220 180,95 360,220" fill="#f8bbd0" stroke="rgba(201, 122, 142, 0.4)" stroke-width="1.5" />
+            </svg>
+
+            <!-- Top Opening Flap -->
+            <div class="envelope-top-flap-wrapper" id="envelope-flap">
+              <svg viewBox="0 0 360 130" preserveAspectRatio="none" class="top-flap-svg">
+                <polygon points="0,0 180,125 360,0" fill="#f48fb1" stroke="#c97a8e" stroke-width="1.5" />
+              </svg>
+            </div>
+
+            <!-- Wax Seal Trigger -->
+            <div class="wax-seal-badge" id="wax-seal" title="Klik segel untuk membuka surat">
+              <div class="wax-seal-inner">
+                <span class="seal-icon">❤️</span>
+                <span class="seal-text">OPEN</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAGE 3: 3D Flip Secret Cards 🫶 -->
+    <section id="page-3" class="page">
+      <!-- Cute Floating Sticker: Love Pill 💖 -->
+      <div class="cute-sticker love-pill" title="Sweet Sparkle 💖">
+        <span class="sticker-emoji">💖</span>
+        <span class="sticker-tag">Sweet!</span>
+      </div>
+
+      <div class="page-content">
+        <!-- 3D Blooming Rose Flower Emblem 🌹 -->
+        <div class="flower-3d-wrapper" title="Klik bunga untuk merekah 🌹">
+          <div class="flower-3d-center">
+            <svg class="flower-3d-svg" viewBox="0 0 160 160" width="110" height="110">
+              <g class="flower-petals-group">
+                <!-- Outer Petals Layer -->
+                <path d="M 80 80 C 60 15 100 15 80 80" fill="url(#petalGrad1)" stroke="#d4af37" stroke-width="0.8" class="petal p1" />
+                <path d="M 80 80 C 145 60 145 100 80 80" fill="url(#petalGrad1)" stroke="#d4af37" stroke-width="0.8" class="petal p2" />
+                <path d="M 80 80 C 100 145 60 145 80 80" fill="url(#petalGrad1)" stroke="#d4af37" stroke-width="0.8" class="petal p3" />
+                <path d="M 80 80 C 15 100 15 60 80 80" fill="url(#petalGrad1)" stroke="#d4af37" stroke-width="0.8" class="petal p4" />
+                <path d="M 80 80 C 35 35 125 35 80 80" fill="url(#petalGrad2)" stroke="#c97a8e" stroke-width="0.8" class="petal p5" />
+                <path d="M 80 80 C 125 35 125 125 80 80" fill="url(#petalGrad2)" stroke="#c97a8e" stroke-width="0.8" class="petal p6" />
+                <path d="M 80 80 C 125 125 35 125 80 80" fill="url(#petalGrad2)" stroke="#c97a8e" stroke-width="0.8" class="petal p7" />
+                <path d="M 80 80 C 35 125 35 35 80 80" fill="url(#petalGrad2)" stroke="#c97a8e" stroke-width="0.8" class="petal p8" />
+              </g>
+              <!-- Center Stamen Core -->
+              <circle cx="80" cy="80" r="14" fill="url(#stamenGrad)" stroke="#d4af37" stroke-width="1.5" class="stamen-core" />
+              <circle cx="80" cy="80" r="6" fill="#ffffff" opacity="0.8" />
+              <defs>
+                <radialGradient id="petalGrad1" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ff758f" />
+                  <stop offset="70%" stop-color="#b83253" />
+                  <stop offset="100%" stop-color="#7a1c32" />
+                </radialGradient>
+                <radialGradient id="petalGrad2" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ffd1dc" />
+                  <stop offset="60%" stop-color="#ff758f" />
+                  <stop offset="100%" stop-color="#b83253" />
+                </radialGradient>
+                <radialGradient id="stamenGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#fff0ab" />
+                  <stop offset="60%" stop-color="#d4af37" />
+                  <stop offset="100%" stop-color="#96771e" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <span class="sub-title-tag">FLIP CARDS TO REVEAL</span>
+        <h2 class="page-title">Little Things About You <span class="hand-inline">🫶</span></h2>
+
+        <!-- 3D Flip Cards Grid -->
+        <div class="cards-grid">
+          
+          <!-- Flip Card 1 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">❤️</div>
+                <h3>Your Smile</h3>
+                <span class="flip-hint">Hover / Touch untuk buka ↻</span>
+              </div>
+              <div class="flip-card-back photo-trigger" data-img="public/photos/photo4.jpeg" data-caption="Your Smile 😊">
+                <img src="public/photos/photo4.jpeg" alt="Your Smile" class="flip-bg-img">
+                <div class="flip-overlay">
+                  <h4>❤️ Your Smile</h4>
+                  <p>“Entah kenapa senyum kamu selalu punya efek aneh.”</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Card 2 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">✨</div>
+                <h3>Your Presence</h3>
+                <span class="flip-hint">Hover / Touch untuk buka ↻</span>
+              </div>
+              <div class="flip-card-back photo-trigger" data-img="public/photos/photo5.jpeg" data-caption="Your Presence ✨">
+                <img src="public/photos/photo5.jpeg" alt="Your Presence" class="flip-bg-img">
+                <div class="flip-overlay">
+                  <h4>✨ Your Presence</h4>
+                  <p>“Bahkan cuma ngobrol sebentar sudah cukup bikin hari lebih baik.”</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Card 3 -->
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="flip-icon">🌷</div>
+                <h3>Just You</h3>
+                <span class="flip-hint">Hover / Touch untuk buka ↻</span>
+              </div>
+              <div class="flip-card-back photo-trigger" data-img="public/photos/photo6.jpeg" data-caption="Just You 🌷">
+                <img src="public/photos/photo6.jpeg" alt="Just You" class="flip-bg-img">
+                <div class="flip-overlay">
+                  <h4>🌷 Just You</h4>
+                  <p>“Nggak perlu alasan khusus. Kamu ya kamu.”</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Surprise Button -->
+        <div class="surprise-section">
+          <button id="btn-surprise" class="btn-interactive">
+            <span class="sparkle-gold">✨</span> Klik aku <span class="sparkle-gold">✨</span>
+          </button>
+          
+          <div id="surprise-toast" class="surprise-toast hidden">
+            <span class="toast-text">Hehe... ketahuan senang ❤️</span>
+          </div>
+        </div>
+
+        <button id="btn-page3" class="btn-primary">
+          <span>Terakhir</span> <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- PAGE 4: Grand Romantic Finale ❤️ with 3D Flying Butterfly -->
+    <section id="page-4" class="page">
+      <!-- Cute Floating Sticker: Sakura Flower 🌸 -->
+      <div class="cute-sticker sakura-badge" title="Forever Love 🌸">
+        <span class="sticker-emoji">🌸</span>
+        <span class="sticker-tag">Always</span>
+      </div>
+
+      <div class="page-content center-focus">
+        
+        <!-- Delay Step 1: Initial Message -->
+        <div id="p4-intro" class="p4-intro-text">
+          <span>Satu hal terakhir...</span>
+        </div>
+
+        <!-- Delay Step 2: Final Message Container -->
+        <div id="p4-main" class="p4-main-content hidden">
+          
+          <!-- 3D Flying Butterfly Vector Emblem -->
+          <div class="butterfly-3d-emblem">
+            <svg class="butterfly-svg" viewBox="0 0 160 160" width="130" height="130">
+              <!-- Left Wing -->
+              <g class="wing-left">
+                <path d="M 80 80 C 40 20 0 40 20 80 C 30 100 70 95 80 80 Z" fill="url(#wingGradLeft)" stroke="#d4af37" stroke-width="1.5" />
+                <path d="M 80 80 C 50 85 20 110 35 135 C 55 150 75 115 80 80 Z" fill="url(#wingGradLeftSub)" stroke="#c97a8e" stroke-width="1.2" />
+              </g>
+              <!-- Right Wing -->
+              <g class="wing-right">
+                <path d="M 80 80 C 120 20 160 40 140 80 C 130 100 90 95 80 80 Z" fill="url(#wingGradRight)" stroke="#d4af37" stroke-width="1.5" />
+                <path d="M 80 80 C 110 85 140 110 125 135 C 105 150 85 115 80 80 Z" fill="url(#wingGradRightSub)" stroke="#c97a8e" stroke-width="1.2" />
+              </g>
+              <!-- Body & Antenna -->
+              <path d="M 80 60 C 78 50 72 35 68 30 M 80 60 C 82 50 88 35 92 30" stroke="#d4af37" stroke-width="2" stroke-linecap="round" fill="none" />
+              <ellipse cx="80" cy="80" rx="4" ry="25" fill="#7a1c32" stroke="#d4af37" stroke-width="1" />
+              <circle cx="80" cy="58" r="4" fill="#d4af37" />
+
+              <defs>
+                <linearGradient id="wingGradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ff758f" />
+                  <stop offset="100%" stop-color="#b83253" />
+                </linearGradient>
+                <linearGradient id="wingGradRight" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ff758f" />
+                  <stop offset="100%" stop-color="#b83253" />
+                </linearGradient>
+                <linearGradient id="wingGradLeftSub" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffd1dc" />
+                  <stop offset="100%" stop-color="#c97a8e" />
+                </linearGradient>
+                <linearGradient id="wingGradRightSub" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffd1dc" />
+                  <stop offset="100%" stop-color="#c97a8e" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <span class="sub-title-tag">FOREVER & ALWAYS</span>
+          <h1 class="final-title">Aku sayang kamu. <span class="heart-pulse-inline">❤️</span></h1>
+          <p class="final-subtext">Sesederhana itu.</p>
+
+          <!-- Romantic Photo Collage Ring -->
+          <div class="finale-collage">
+            <div class="collage-item c1 photo-trigger" data-img="public/photos/photo7.jpeg" data-caption="Sweet Moments 💕">
+              <img src="public/photos/photo7.jpeg" alt="Memory">
+            </div>
+            <div class="collage-item c2 main-hero-photo photo-trigger" data-img="public/photos/hbd.jpeg" data-caption="Happy Birthday / Special Day ❤️">
+              <img src="public/photos/hbd.jpeg" alt="Special Day">
+              <span class="collage-label">Forever ❤️</span>
+            </div>
+            <div class="collage-item c3 photo-trigger" data-img="public/photos/photo8.jpeg" data-caption="Always Together ✨">
+              <img src="public/photos/photo8.jpeg" alt="Memory">
+            </div>
+          </div>
+
+          <div class="footer-tag">
+            <p>Made with a little bit of love ❤️</p>
+          </div>
+
+          <button id="btn-restart" class="btn-subtle" title="Mulai lagi dari awal">
+            <span>↺ Ulangi cerita</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
